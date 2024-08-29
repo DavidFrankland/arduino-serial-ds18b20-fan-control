@@ -3,6 +3,7 @@
 #include <DallasTemperature.h>
 #include <Wire.h>
 #include <LiquidCrystal.h>
+#include "SplashScreen.h"
 
 //      Arduino       DS18B20
 // +5V  ──────────┬────────── VDD
@@ -63,6 +64,8 @@ void setup()
 
   lcd.begin(16, 2);
   lcd.noCursor();
+  lcd.clear();
+  SplashScreen::show(lcd);
   lcd.clear();
 
   sensors.begin();
